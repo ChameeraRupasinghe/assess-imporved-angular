@@ -41,6 +41,16 @@ export class AppComponent {
     bonus: '',
     periodicMeeting: '',
     supervisoryIncompetence: '',
-    incompleteDrawing: ''
+    incompleteDrawing: '',
+    rain: ''
   });
+
+  onSubmit() {
+
+    const sum = 0;
+
+
+    alert(JSON.stringify(this.assessForm.value));
+
+  }
 }

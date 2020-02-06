@@ -34,6 +34,49 @@
     flex: 1;
   }
 
+  .btn.focus,
+  .btn:focus,
+  .form-control:focus,
+  .custom-select:focus,
+  .custom-select:focus {
+    box-shadow: none;
+  }
+
+  .btn-success,
+  .btn-success:hover {
+    color: #312BC6;
+    border-color: #00FC79;
+    background-color: #00FC79;
+  }
+
+  .btn-group-lg > .btn,
+  .btn-lg {
+    padding: 13px 15px 15px;
+    font-size: 16px;
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+
+  .btn-group-sm > .btn,
+  .btn-sm {
+    padding: 10px 16px 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 0;
+  }
+
+  .btn-danger,
+  body .btn-danger:hover {
+    background: #312BC6;
+    border-color: #312BC6;
+    color: #FFFF;
+    font-size: 1.2em;
+    border-radius: 5px;
+    padding: 15px;
+    align-items: center;
+  }
+
+
   .toolbar {
     height: 60px;
     margin: -8px;
@@ -548,7 +591,7 @@
 <div>
   <h1>Assess</h1>
 
-  <form [formGroup]="assessForm">
+  <form [formGroup]="assessForm" (ngSubmit)="onSubmit()">
     <div class="card-container">
       <div class="card">
         <span>Suitability  or quality of plant, equipment and tools</span>
@@ -721,7 +764,7 @@
       <div class="card">
         <span>Lack of periodic meeting with labour</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="periodicMeeting" [value]="optionSetA[2]">
+        <select class="custom-select" formControlName="periodicMeeting" [value]="optionSetC[2]">
           <option *ngFor="let option of optionSetA">{{option}}</option>
         </select>
       </div>
@@ -738,12 +781,26 @@
         <span>Incomplete drawings, missing details in drawings</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="incompleteDrawing" [value]="optionSetD[2]">
+          <option *ngFor="let option of optionSetD; ">{{option}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Inclement weather / rain</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="rain" [value]="optionSetD[2]">
           <option *ngFor="let option of optionSetD">{{option}}</option>
         </select>
       </div>
 
 
     </div>
+
+    <div class="card-container">
+      <button type="submit" class="btn btn-danger">ASSESS</button>
+    </div>
+
+
   </form>
 </div>
 
