@@ -597,7 +597,7 @@
         <span>Suitability  or quality of plant, equipment and tools</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="equipSuitable" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -605,7 +605,7 @@
         <span>Skill of labour</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="skillLabour" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -613,7 +613,7 @@
         <span>Labour experience</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="labourXp" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -621,7 +621,7 @@
         <span>Technology employed and new project techniques</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="technology" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -629,7 +629,7 @@
         <span>Construction method used</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="constructionMethod" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -637,7 +637,7 @@
         <span>Technical ability & construction knowledge of engineer and staff</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="techKnowledgeStaff" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -645,7 +645,7 @@
         <span>Quality or suitability of material</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="materialQuality" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -661,7 +661,7 @@
         <span>Communication between site management and labours</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="commWithLabours" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -669,7 +669,7 @@
         <span>Shortage/Inefficiency of tools and equipment</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="labourXp" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -677,7 +677,7 @@
         <span>Unavailability of material/ Late deliveries of material/material supply</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="materialDelay" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -685,7 +685,7 @@
         <span>Amount of wages/unfair wages of construction workers</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="wages" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -701,7 +701,7 @@
         <span>Love and belongingness, labours recognition and respect</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="love" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -709,7 +709,7 @@
         <span>Quality control/standard and specifications</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="qualityControl" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -717,7 +717,7 @@
         <span>Leadership qualities of the engineer and staff</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="leadership" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -733,7 +733,7 @@
         <span>Crew size and composition/Distribution of labour</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="crewSize" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -741,7 +741,7 @@
         <span>Safety laws and their execution</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="law" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -757,7 +757,7 @@
         <span>Incentive payments/bonus at the end of project or year</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="bonus" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -765,7 +765,7 @@
         <span>Lack of periodic meeting with labour</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="periodicMeeting" [value]="optionSetC[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
@@ -773,7 +773,7 @@
         <span>Supervisory incompetence/Instructions delay</span>
         <div class="spacer"></div>
         <select class="custom-select" formControlName="supervisoryIncompetence" [value]="optionSetA[2]">
-          <option *ngFor="let option of optionSetA">{{option}}</option>
+                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 

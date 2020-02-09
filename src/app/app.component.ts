@@ -8,7 +8,12 @@ import {FormBuilder} from '@angular/forms';
 })
 export class AppComponent {
   title = 'assess-improved';
-  optionSetA: any = ['Pathetic', 'Bad', 'Neutral', 'Good', 'Excellent'];
+  optionSetA: any = [
+    {name: 'Pathetic', value: -1},
+    {name: 'Bad', value: -0.5},
+    {name: 'Neutral', value: 0},
+    {name: 'Good', value: 0.5},
+    {name: 'Excellent', value: 1}];
   optionSetB: any = ['Never', 'Using', 'Neutral', 'Highly-using'];
   optionSetC: any = ['Never', 'Not-using', 'Neutral', 'Using', 'Highly-using'];
   optionSetD: any = ['Frequent', 'Always', 'Neutral', 'Random', 'Never'];
@@ -50,7 +55,7 @@ export class AppComponent {
     const sum = 0;
 
 
-    alert(JSON.stringify(this.assessForm.value));
+    alert(JSON.stringify(this.assessForm.controls['equipSuitable'].value));
 
   }
 }
