@@ -49,7 +49,7 @@
     background-color: #00FC79;
   }
 
-  .btn-group-lg > .btn,
+  .btn-group-lg>.btn,
   .btn-lg {
     padding: 13px 15px 15px;
     font-size: 16px;
@@ -57,7 +57,7 @@
     text-transform: uppercase;
   }
 
-  .btn-group-sm > .btn,
+  .btn-group-sm>.btn,
   .btn-sm {
     padding: 10px 16px 10px;
     font-size: 15px;
@@ -322,7 +322,7 @@
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
-    .card-container > *:not(.circle-link),
+    .card-container>*:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -594,9 +594,81 @@
   <form [formGroup]="assessForm" (ngSubmit)="onSubmit()">
     <div class="card-container">
       <div class="card">
-        <span>Suitability  or quality of plant, equipment and tools</span>
+        <span>Suitability or quality of plant, equipment and tools</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="equipSuitable" [value]="optionSetA[2]">
+        <select class="custom-select" formControlName="equipSuitable" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Satisfication/Inefficiency of tools and equipment</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="toolSatisfication" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Breakdown and damages to the plant and equipment(machinery)</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="breakdown" [value]=0>
+          <option *ngFor="let option of optionSetD" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Quality or suitability of material</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="materialQuality" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Availability of material/ Late deliveries of material/material supply</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="materialAvailabilty" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Communication between site management and labours</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="commWithLabours" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Leadership qualities of the engineer and staff</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="leadership" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Crew size and composition/Distribution of labour</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="crewSize" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Lack of periodic meeting with labour</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="periodicMeeting" [value]=0>
+          <option *ngFor="let option of optionSetB" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Supervisory competence/ ontime instructions</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="supervisoryCompetence" [value]=0>
           <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
@@ -604,7 +676,7 @@
       <div class="card">
         <span>Skill of labour</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="skillLabour" [value]="optionSetA[2]">
+        <select class="custom-select" formControlName="skillLabour" [value]=0>
           <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
@@ -612,7 +684,63 @@
       <div class="card">
         <span>Labour experience</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="labourXp" [value]="optionSetA[2]">
+        <select class="custom-select" formControlName="labourXp" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Working overtime(provision of extra money after normal work)</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="overtime" [value]=0>
+          <option *ngFor="let option of optionSetB" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Opportunity to undertake challenging tasks/targets, giving responsibility</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="opportunityChallengingTasks" [value]=0>
+          <option *ngFor="let option of optionSetB" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Amount of wages/unfair wages of construction workers</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="wages" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Accommodation</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="accommodation" [value]="0">
+          <option *ngFor="let option of optionSetB" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Love and belongingness, labours recognition and respect</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="love" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Safety laws and their execution</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="law" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Incentive payments/bonus at the end of project or year</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="bonus" [value]=0>
           <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
@@ -620,7 +748,7 @@
       <div class="card">
         <span>Technology employed and new project techniques</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="technology" [value]="optionSetA[2]">
+        <select class="custom-select" formControlName="technology" [value]=0>
           <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
@@ -628,7 +756,7 @@
       <div class="card">
         <span>Construction method used</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="constructionMethod" [value]="optionSetA[2]">
+        <select class="custom-select" formControlName="constructionMethod" [value]=0>
           <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
@@ -636,163 +764,34 @@
       <div class="card">
         <span>Technical ability & construction knowledge of engineer and staff</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="techKnowledgeStaff" [value]="optionSetA[2]">
+        <select class="custom-select" formControlName="techKnowledgeStaff" [value]=0>
           <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Quality or suitability of material</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="materialQuality" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Opportunity to undertake challenging tasks/targets, giving responsibility</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="opportunityChallengingTasks" [value]="optionSetB[2]">
-          <option *ngFor="let option of optionSetB">{{option}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Communication between site management and labours</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="commWithLabours" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Shortage/Inefficiency of tools and equipment</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="labourXp" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Unavailability of material/ Late deliveries of material/material supply</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="materialDelay" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Amount of wages/unfair wages of construction workers</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="wages" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Accommodation</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="accommodation" [value]="optionSetC[2]">
-          <option *ngFor="let option of optionSetC">{{option}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Love and belongingness, labours recognition and respect</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="love" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Quality control/standard and specifications</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="qualityControl" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Leadership qualities of the engineer and staff</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="leadership" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Breakdown and damages to the plant and equipment(machinery)</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="breakdown" [value]="optionSetD[2]">
-          <option *ngFor="let option of optionSetD">{{option}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Crew size and composition/Distribution of labour</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="crewSize" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Safety laws and their execution</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="law" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Working overtime(provision of extra money after normal work)</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="overtime" [value]="optionSetC[2]">
-          <option *ngFor="let option of optionSetC">{{option}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Incentive payments/bonus at the end of project or year</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="bonus" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Lack of periodic meeting with labour</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="periodicMeeting" [value]="optionSetC[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <span>Supervisory incompetence/Instructions delay</span>
-        <div class="spacer"></div>
-        <select class="custom-select" formControlName="supervisoryIncompetence" [value]="optionSetA[2]">
-                    <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
       <div class="card">
         <span>Incomplete drawings, missing details in drawings</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="incompleteDrawing" [value]="optionSetD[2]">
-          <option *ngFor="let option of optionSetD; ">{{option}}</option>
+        <select class="custom-select" formControlName="incompleteDrawing" [value]=0>
+          <option *ngFor="let option of optionSetD" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <span>Quality control/standard and specifications</span>
+        <div class="spacer"></div>
+        <select class="custom-select" formControlName="qualityControl" [value]=0>
+          <option *ngFor="let option of optionSetA" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
 
       <div class="card">
         <span>Inclement weather / rain</span>
         <div class="spacer"></div>
-        <select class="custom-select" formControlName="rain" [value]="optionSetD[2]">
-          <option *ngFor="let option of optionSetD">{{option}}</option>
+        <select class="custom-select" formControlName="rain" [value]=0>
+          <option *ngFor="let option of optionSetD" [value]="option.value">{{option.name}}</option>
         </select>
       </div>
-
 
     </div>
 
@@ -800,9 +799,12 @@
       <button type="submit" class="btn btn-danger">ASSESS</button>
     </div>
 
+    <div class="card-container">
+      <p style="font-size: 10em; color: #312BC6;">{{productivityString}}</p>
+    </div>
+
 
   </form>
 </div>
-
 
 <router-outlet></router-outlet>
